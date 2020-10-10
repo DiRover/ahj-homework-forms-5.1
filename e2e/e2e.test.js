@@ -35,9 +35,9 @@ describe('Credit Card Validator form', () => {
 
   test('check popover', async () => {
     await page.goto(baseUrl);
-    //const popover = await page.$('[data-widget=popover-widget]');
+    // const popover = await page.$('[data-widget=popover-widget]');
     const submit = await page.$('[data-btn=btn-submit]');
     submit.click();
     await page.waitForSelector('[data-widget=popover-widget].active');
   });
-})
+});
