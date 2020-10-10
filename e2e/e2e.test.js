@@ -1,7 +1,7 @@
 import puppetteer from 'puppeteer';
 import { fork } from 'child_process';
 
-jest.setTimeout(60000); // default puppeteer timeout
+jest.setTimeout(30000); // default puppeteer timeout
 
 describe('Credit Card Validator form', () => {
   let browser = null;
@@ -36,7 +36,7 @@ describe('Credit Card Validator form', () => {
   test('check popover', async () => {
     await page.goto(baseUrl);
     //const popover = await page.$('[data-widget=popover-widget]');
-    const submit = await form.$('[data-btn=btn-submit]');
+    const submit = await page.$('[data-btn=btn-submit]');
     submit.click();
     await page.waitForSelector('[data-widget=popover-widget].active');
   });
